@@ -1,4 +1,4 @@
-require "project/version"
+#require "project/version"
 
 module Project
   class Error < StandardError; end
