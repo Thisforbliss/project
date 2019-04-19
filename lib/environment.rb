@@ -1,9 +1,10 @@
 #require "project/version"
 require_relative './project/version'
 require_relative './project/cli'
-
-#require 'pry'
-#require 'nokogiri'
+require 'open-uri'
+require 'pry'
+require 'nokogiri'
+require_relative './project/scraper'
 
 
 
