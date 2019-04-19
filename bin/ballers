@@ -2,3 +2,5 @@
 
 require_relative "../lib/project"
 puts "jfdjdf"
+
+CLI.new.start
