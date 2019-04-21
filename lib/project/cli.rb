@@ -5,10 +5,10 @@ class CLI
     Scraper.new.scrape_page
   end 
   
-  def menu
-  Player.all.each.with_index(1) do |player,index|
-    puts #{index}. "#{player.text}"
-  end
-  end
+  # def menu
+  # Player.all.each.with_index(1) do |player,index|
+  #   puts #{index}. "#{player.text}"
+  # end
+  #end
 
 end
