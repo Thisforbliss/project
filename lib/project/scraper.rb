@@ -1,4 +1,5 @@
 class Scraper
+  
   def scrape_page
     html = open("https://www.onthisday.com/people/basketball-players")
     doc = Nokogiri::HTML(html)

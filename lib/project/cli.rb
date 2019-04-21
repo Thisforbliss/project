@@ -6,9 +6,9 @@ class CLI
   end 
   
   def menu
-   Plqyer.all.each.with_index(1) do |player,index|
-     puts "#{index}". #{player.first_name} #{player.last_name}"
-   end
+  Player.all.each.with_index(1) do |player,index|
+    puts #{index}. "#{player.text}"
+  end
   end
 
 end
