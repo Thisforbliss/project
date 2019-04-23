@@ -1,9 +1,11 @@
 class CLI 
   
   def start
-    puts "Welcome to the Basketball Hall of Fame!!!"
-    Scraper.new.scrape_page
+    puts "Welcome to the Basketball Hall of Fame where you could learn about your favorite basketaball players!!!"
+    puts "Choose your player buy entering the number listed."
+    Scraper.new.scrape_pageexit
     menu
+    number = gets.chomp!
    end
   
   def menu
@@ -12,7 +14,7 @@ class CLI
     end
   end
   
-  d
+  
 
 
 
