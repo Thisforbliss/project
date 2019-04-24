@@ -1,5 +1,5 @@
 class Player
-  attr_accessor :name, :url
+  attr_accessor :name, :url, :team
   @@all= []
   
   def initialize(name)
