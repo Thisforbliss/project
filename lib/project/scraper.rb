@@ -1,9 +1,10 @@
+
 class Scraper
   
   def scrape_page
-    html = open("http://www.espn.com/nba/player/bio/_/id/3975/stephen-curry")
+    html = open("http://www.espn.com/nba/team/roster/_/name/gs")
     website = Nokogiri::HTML(html)
-    stats = website.css("div.Wrapper.Card__Content")
+    stats = website.css("section.Table2_responsiveTable")
     
     name = "Stephen Curry"
     steph = Player.new(name)
