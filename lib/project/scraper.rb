@@ -1,4 +1,4 @@
-require 'pry'.
+require 'pry'
 class Scraper
   
   def scrape_page
@@ -12,4 +12,12 @@ class Scraper
   end 
 end
 
+# #(Element:0xcc004c {
+#           name = "span",
+#           attributes = [
+#             #(Attr:0xc9d9c0 { name = "style", value = "min-width:40px" }),
+#             #(Attr:0xc9d9ac { name = "class", value = "" })],
 
+# <page break> --- Press enter to continue ( q<enter> to break ) --- <page break>
+
+#           children = [ #(Text "PF")]
