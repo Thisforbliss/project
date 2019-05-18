@@ -1,5 +1,5 @@
 class Player
-  attr_accessor :name, :url, :team
+  attr_accessor :name, :position, :age, :height, :weight, :salary, :college
   @@all= []
   
   def initialize(name)
@@ -7,12 +7,8 @@ class Player
     @@all << self 
   end
   
-  
-  
-  
   def self.all
     @@all 
   end
-  
   
 end
