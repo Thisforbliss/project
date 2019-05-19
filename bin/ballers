@@ -3,6 +3,6 @@
 require_relative "../lib/environment"
 
 
-#CLI.new.start
+CLI.new.menu
 
-Scraper.new.scrape_page
+#Scraper.new.scrape_page

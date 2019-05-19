@@ -1,3 +1,5 @@
+require 'pry'
+#require relative "scraper"
 class CLI
   
   attr_accessor :player, :continue
@@ -13,6 +15,7 @@ class CLI
     select_player
     menu if @continue && @player != nil
     end
+    goodbye
   end
   
   def start
@@ -27,8 +30,9 @@ class CLI
     #Scraper.new.scrape_page
     Player.all.clear
     Scraper.scrape_page
-    Player.all.each.with_index(1) do |player,index|
+    Player.all.each.with_index(1) do |player, index|
       puts "#{index}. #{player.name}"
+    binding.pry
     end
   end
   
@@ -36,7 +40,7 @@ class CLI
   input = ""
   puts "\n Choose any player you wish by the number or type 'exit' when finished."
   input = gets.chomp.strip
-    if input = "exit"
+    if input == "exit"
       @continue = false
     elsif input.to_i.between?(1, Player.all.length)
       @player = Player.all[input.to_i - 1]
@@ -44,5 +48,5 @@ class CLI
       puts "Error, Choose any player you wish by the number or type 'exit' when finished.  "
     end
   end
-
+  
 end

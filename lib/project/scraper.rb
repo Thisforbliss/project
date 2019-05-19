@@ -14,9 +14,10 @@ class Scraper
       new_player.weight = player.css(".Table2__td")[5].text
       new_player.college = player.css(".Table2__td")[6].text
       new_player.salary = player.css(".Table2__td")[7].text
-     binding.pry
+     #binding.pry
     end
   end 
+  
 end
 
 
