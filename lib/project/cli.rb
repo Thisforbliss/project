@@ -1,3 +1,4 @@
+
 require 'pry'
 #require relative "scraper"
 class CLI
@@ -10,11 +11,12 @@ class CLI
   
   def call 
     start 
-    while @continue 
+    
+    #while @continue 
     menu
     select_player
-    menu if @continue && @player != nil
-    end
+    menu #if @continue && @player != nil
+    
     goodbye
   end
   
@@ -32,21 +34,23 @@ class CLI
     Scraper.scrape_page
     Player.all.each.with_index(1) do |player, index|
       puts "#{index}. #{player.name}"
-    binding.pry
+    #binding.pry
     end
   end
   
   def select_player
-  input = ""
-  puts "\n Choose any player you wish by the number or type 'exit' when finished."
-  input = gets.chomp.strip
-    if input == "exit"
-      @continue = false
-    elsif input.to_i.between?(1, Player.all.length)
-      @player = Player.all[input.to_i - 1]
-    else
-      puts "Error, Choose any player you wish by the number or type 'exit' when finished.  "
+    input = ""
+    while input != "exit"
+    
+    puts "\n Choose any player you wish by the number or type 'exit' when finished."
+    input = gets.chomp.strip
+      if input == "exit"
+        @continue = false
+      elsif input.to_i.between?(1, Player.all.length)
+        @player = Player.all[input.to_i - 1]
+      else
+        puts "Error, Choose any player you wish by the number or type 'exit' when finished.  "
+      end
     end
-  end
-  
+end  
 end
