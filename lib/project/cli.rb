@@ -16,7 +16,7 @@ class CLI
     menu
     select_player
     menu #if @continue && @player != nil
-    
+    show_player
     goodbye
   end
   
@@ -52,5 +52,21 @@ class CLI
         puts "Error, Choose any player you wish by the number or type 'exit' when finished.  "
       end
     end
-end  
+  end  
+  
+  def show_player
+    puts "#{Player.name} plays #{Player.position} for the Golden State Warriors. He is #{Player.age} years old and #{Player.height} tall. He comes in weighing #{Player.weight}. #{Player.name} graduated from #{Player.college} and makes honest living of #{Player.salary} dollars per year."
+    puts "Select another player by typing 'yes' or press 'exit' when you're ready to leave."
+    input = gets.strip
+    if input = "yes"
+      menu
+    elsif input = "exit"
+      @continue = false 
+    else 
+      puts "Error"
+      menu
+    end
+  end
+  
+  
 end
