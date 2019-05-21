@@ -11,12 +11,10 @@ class CLI
   
   def call 
     start 
-    
-    #while @continue 
     menu
     select_player
-    menu #if @continue && @player != nil
-    show_player
+    show_player if @continue == true && @player != nil
+  end
     goodbye
   end
   
@@ -55,7 +53,7 @@ class CLI
   end  
   
   def show_player
-    puts "#{Player.name} plays #{Player.position} for the Golden State Warriors. He is #{Player.age} years old and #{Player.height} tall. He comes in weighing #{Player.weight}. #{Player.name} graduated from #{Player.college} and makes honest living of #{Player.salary} dollars per year."
+    puts "#{@player.name} plays #{@player.position} for the Golden State Warriors. He is #{@player.age} years old and #{@player.height} tall. He comes in weighing #{@player.weight}. #{@player.name} graduated from #{@player.college} and makes honest living of #{@player.salary} dollars per year."
     puts "Select another player by typing 'yes' or press 'exit' when you're ready to leave."
     input = gets.strip
     if input = "yes"
