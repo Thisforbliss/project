@@ -27,19 +27,16 @@ class CLI
   end
   
   def menu
-    #Scraper.new.scrape_page
     Player.all.clear
     Scraper.scrape_page
     Player.all.each.with_index(1) do |player, index|
       puts "#{index}. #{player.name}"
-    #binding.pry
     end
   end
   
   def select_player
     input = ""
     while input != "exit"
-    
     puts "\n Choose any player you wish by the number or type 'exit' when finished."
     input = gets.chomp.strip
       if input == "exit"
