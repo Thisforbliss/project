@@ -11,6 +11,8 @@ class CLI
   
   def call 
     start 
+    #skips over while loop
+    while @continue
     menu
     select_player
     show_player if @continue == true && @player != nil
@@ -47,15 +49,17 @@ class CLI
         puts "Error, Choose any player you wish by the number or type 'exit' when finished.  "
       end
     end
+    # @player trying to figure out how to exit loop and run show_player
   end  
   
   def show_player
     puts "#{@player.name} plays #{@player.position} for the Golden State Warriors. He is #{@player.age} years old and #{@player.height} tall. He comes in weighing #{@player.weight}. #{@player.name} graduated from #{@player.college} and makes honest living of #{@player.salary} dollars per year."
     puts "Select another player by typing 'yes' or press 'exit' when you're ready to leave."
+binding.pry
     input = gets.strip
-    if input = "yes"
+    if input == "yes"
       menu
-    elsif input = "exit"
+    elsif input == "exit"
       @continue = false 
     else 
       puts "Error"
