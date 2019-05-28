@@ -12,11 +12,11 @@ class CLI
   def call 
     start 
     #skips over while loop
-    while @continue
+    #while @continue
     menu
     select_player
     show_player if @continue == true && @player != nil
-  end
+  #end
     goodbye
   end
   
@@ -41,10 +41,12 @@ class CLI
     while input != "exit"
     puts "\n Choose any player you wish by the number or type 'exit' when finished."
     input = gets.chomp.strip
-      if input == "exit"
-        @continue = false
-      elsif input.to_i.between?(1, Player.all.length)
+      if input.to_i.between?(1, Player.all.length)
         @player = Player.all[input.to_i - 1]
+      elsif input == "exit"
+        @continue = false
+      # elsif input.to_i.between?(1, Player.all.length)
+      #   @player = Player.all[input.to_i - 1]
       else
         puts "Error, Choose any player you wish by the number or type 'exit' when finished.  "
       end
