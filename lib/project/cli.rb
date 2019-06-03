@@ -13,8 +13,8 @@ class CLI
     start 
     #skips over while loop
     #while @continue
+    list_players
     menu
-    select_player
     show_player if @continue == true && @player != nil
   #end
     goodbye
@@ -28,7 +28,7 @@ class CLI
     puts "See you next time for any players updates!"
   end
   
-  def menu
+  def list_players
     Player.all.clear
     Scraper.scrape_page
     Player.all.each.with_index(1) do |player, index|
@@ -36,13 +36,13 @@ class CLI
     end
   end
   
-  def select_player
+  def menu
     input = ""
     while input != "exit"
-    puts "\n Choose any player you wish by the number or type 'exit' when finished."
-    input = gets.chomp.strip
-      if input.to_i.between?(1, Player.all.length)
-        @player = Player.all[input.to_i - 1]
+    puts "Choose any player you wish by the number or type 'exit' when finished."
+    input = gets.strip.downcase
+      if input.to_i > 0      #.between?(1, Player.all.length)
+        puts @player = Player.all[input.to_i - 1]
       elsif input == "exit"
         @continue = false
       # elsif input.to_i.between?(1, Player.all.length)
