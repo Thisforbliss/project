@@ -41,8 +41,13 @@ class CLI
     while input != "exit"
     puts "Choose any player you wish by the 'number', type 'list' to reshow list or type 'exit' when finished."
     input = gets.strip.downcase
-      if input.to_i > 0                       #.between?(1, Player.all.length)
-        puts @player[input.to_i - 1]          #= Player.all[input.to_i - 1]
+      if input.to_i > 0                      
+        the_player = @player[input.to_i - 1]  
+        
+      puts "#{the_player.name} plays #{the_player.position} for the Golden State Warriors. He is #{the_player.age} years old and #{the_player.height} tall. He comes in weighing #{the_player.weight}. #{the_player.name} graduated from #{the_player.college} and makes honest living of #{the_player.salary} dollars per year."
+        "Select another player by typing 'yes' or press 'exit' when you're ready to leave."
+        
+        binding.pry
       elsif input == "exit"
         @continue = false
       # elsif input.to_i.between?(1, Player.all.length)
