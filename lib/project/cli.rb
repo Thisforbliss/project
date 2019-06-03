@@ -39,19 +39,21 @@ class CLI
   def menu
     input = ""
     while input != "exit"
-    puts "Choose any player you wish by the number or type 'exit' when finished."
+    puts "Choose any player you wish by the 'number', type 'list' to reshow list or type 'exit' when finished."
     input = gets.strip.downcase
-      if input.to_i > 0      #.between?(1, Player.all.length)
-        puts @player = Player.all[input.to_i - 1]
+      if input.to_i > 0                       #.between?(1, Player.all.length)
+        puts @player[input.to_i - 1]          #= Player.all[input.to_i - 1]
       elsif input == "exit"
         @continue = false
       # elsif input.to_i.between?(1, Player.all.length)
       #   @player = Player.all[input.to_i - 1]
+      elsif input == "list"
+      list_players
       else
-        puts "Error, Choose any player you wish by the number or type 'exit' when finished.  "
+        puts "Error, Choose any player you wish by the number or type 'exit' when finished."
+        
       end
     end
-    # @player trying to figure out how to exit loop and run show_player
   end  
   
   def show_player
