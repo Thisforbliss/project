@@ -39,7 +39,7 @@ class CLI
   def menu
     input = ""
     while input != "exit"
-    puts "Choose any player you wish by the 'number', type 'list' to reshow list or type 'exit' when finished."
+    puts "Choose any player you wish by the 'number' and press 'enter', type 'list' to reshow list or type 'exit' when finished."
     input = gets.strip.downcase
       if input.to_i > 0                      
         the_player = Player.all[input.to_i - 1]  
