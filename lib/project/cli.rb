@@ -1,7 +1,7 @@
 
 require 'pry'
 #require relative "scraper"
-class CLI
+class Project::CLI
 
   attr_accessor :player, :continue
 
