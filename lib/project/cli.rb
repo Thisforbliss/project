@@ -1,8 +1,5 @@
-
 require 'pry'
-#require relative "scraper"
 class Project::CLI
-
   attr_accessor :player, :continue
 
   def intialize
@@ -11,12 +8,9 @@ class Project::CLI
 
   def call
     start
-    #skips over while loop
-    #while @continue
     list_players
     menu
     show_player if @continue == true && @player != nil
-  #end
     goodbye
   end
 
@@ -28,10 +22,12 @@ class Project::CLI
     puts "See you next time for any players updates!"
   end
 
+  def players
+    @players = Project::Scraper.all
+  end
+
   def list_players
-    Player.all.clear
-    Scraper.scrape_page
-    Player.all.each.with_index(1) do |player, index|
+    @players.each.with_index(1) do |player, index|
       puts "#{index}. #{player.name}"
     end
   end
@@ -47,8 +43,6 @@ class Project::CLI
         "Select another player by typing 'yes' or press 'exit' when you're ready to leave."
       elsif input == "exit"
         @continue = false
-        #elsif input.to_i.between?(1, Player.all.length)
-        #@player = Player.all[input.to_i - 1]
       elsif input == "list"
         list_players
       else
@@ -70,6 +64,4 @@ class Project::CLI
       menu
     end
   end
-
-
 end

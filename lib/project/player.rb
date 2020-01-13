@@ -1,14 +1,14 @@
 class Player
   attr_accessor :name, :position, :age, :height, :weight, :salary, :college
-  @@all= []
-  
+    @@all= []
+
   def initialize(name)
     @name = name
-    @@all << self 
+    @@all << self
   end
-  
+
   def self.all
-    @@all 
+    @@all
   end
-  
+
 end
