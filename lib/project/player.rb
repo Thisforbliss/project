@@ -8,6 +8,8 @@ class Project::Player
   end
 
   def self.all
+    Project::Scraper.scrape_page if @@all.empty?
+    
     @@all
   end
 

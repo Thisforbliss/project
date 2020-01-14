@@ -24,8 +24,7 @@ class Project::CLI
   end
 
   def players
-    @players = Scrape.scrape_page
-    binding.pry
+    @players = Project::Player.all
   end
 
 
