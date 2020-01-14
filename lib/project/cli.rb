@@ -40,7 +40,7 @@ class Project::CLI
       puts "Choose any player you wish by the 'number' and press 'enter', type 'list' to reshow list or type 'exit' when finished."
       input = gets.strip.downcase
       if input.to_i > 0
-        the_player = Player.all[input.to_i - 1]
+        the_player = Project::Player.all[input.to_i - 1]
         puts "#{the_player.name} plays #{the_player.position} for the Golden State Warriors. He is #{the_player.age} years old and #{the_player.height} tall. He comes in weighing #{the_player.weight}. #{the_player.name} graduated from #{the_player.college} and makes honest living of #{the_player.salary} dollars per year."
         "Select another player by typing 'yes' or press 'exit' when you're ready to leave."
       elsif input == "exit"
