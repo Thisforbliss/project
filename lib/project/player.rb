@@ -1,4 +1,4 @@
-class Player
+class Project::Player
   attr_accessor :name, :position, :age, :height, :weight, :salary, :college
     @@all= []
 

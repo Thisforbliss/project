@@ -8,6 +8,7 @@ class Project::CLI
 
   def call
     start
+    players
     list_players
     menu
     show_player if @continue == true && @player != nil
@@ -23,8 +24,10 @@ class Project::CLI
   end
 
   def players
-    @players = Project::Scraper.all
+    @players = Scrape.scrape_page
+    binding.pry
   end
+
 
   def list_players
     @players.each.with_index(1) do |player, index|

@@ -1,7 +1,6 @@
-require 'pry'
 require 'nokogiri'
 require 'open-uri'
-class Scraper
+class Project::Scraper
 
   def self.scrape_page
     html = open("http://www.espn.com/nba/team/roster/_/name/gs")
@@ -17,6 +16,6 @@ class Scraper
        new_player.weight = player.css(".Table__TD")[5].text
        new_player.college = player.css(".Table__TD")[6].text
        new_player.salary = player.css(".Table__TD")[7].text
-    end
+     end
   end
 end
