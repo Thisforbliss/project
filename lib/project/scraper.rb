@@ -8,14 +8,15 @@ class Project::Scraper
     players = website.css(".Table__TBODY tr")
 
     players.each do |player|
-       name = player.css(".Table__TD")[1].text
+       pp = player.css(".Table__TD")
+       name = pp[1].text
        new_player = Project::Player.new(name)
-       new_player.position = player.css(".Table__TD")[2].text
-       new_player.age = player.css(".Table__TD")[3].text
-       new_player.height = player.css(".Table__TD")[4].text
-       new_player.weight = player.css(".Table__TD")[5].text
-       new_player.college = player.css(".Table__TD")[6].text
-       new_player.salary = player.css(".Table__TD")[7].text
+       new_player.position = pp[2].text
+       new_player.age = pp[3].text
+       new_player.height = pp[4].text
+       new_player.weight = pp[5].text
+       new_player.college = pp[6].text
+       new_player.salary = pp[7].text
      end
   end
 end
