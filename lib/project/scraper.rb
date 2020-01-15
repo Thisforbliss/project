@@ -9,7 +9,7 @@ class Project::Scraper
 
     players.each do |player|
        pp = player.css(".Table__TD")
-       name = pp[1].text
+       name = pp[1].css(".AnchorLink").text
        new_player = Project::Player.new(name)
        new_player.position = pp[2].text
        new_player.age = pp[3].text
@@ -17,6 +17,7 @@ class Project::Scraper
        new_player.weight = pp[5].text
        new_player.college = pp[6].text
        new_player.salary = pp[7].text
+       binding.pry
      end
   end
 end
